@@ -1,0 +1,41 @@
+DexID,Name,HP,ATK,DEF,SPATK,SPDEF,SPEED,P-Type,S-Type,Tera,Gimmick,Evolution,Evo_Level,Forms
+656,Froakie,41,56,40,62,44,71,Water,None,Water,None,Frogadier,16,{}
+657,Frogadier,54,63,52,83,56,97,Water,None,Water,None,Greninja,36,{}
+658,Greninja,72,95,67,103,71,122,Water,Dark,Dark,BattleBond/Z-Move,None,0,"{""BattleBond"": {""HP"": 72, ""ATK"": 145, ""DEF"": 67, ""SPATK"": 153, ""SPDEF"": 71, ""SPEED"": 132, ""P-Type"": ""Water"", ""S-Type"": ""Dark""}}"
+004,Charmander,39,52,43,60,50,65,Fire,None,Fire,None,Charmeleon,16,{}
+005,Charmeleon,58,64,58,80,65,80,Fire,None,Fire,None,Charizard,36,{}
+006,Charizard,78,84,78,109,85,100,Fire,Flying,Fire,Mega/G-Max/Tera,None,0,"{""MegaX"": {""HP"": 78, ""ATK"": 130, ""DEF"": 111, ""SPATK"": 130, ""SPDEF"": 85, ""SPEED"": 100, ""P-Type"": ""Fire"", ""S-Type"": ""Dragon""}, ""MegaY"": {""HP"": 78, ""ATK"": 104, ""DEF"": 78, ""SPATK"": 159, ""SPDEF"": 115, ""SPEED"": 100, ""P-Type"": ""Fire"", ""S-Type"": ""Flying""}, ""GMax"": {""HP"": 156, ""ATK"": 104, ""DEF"": 98, ""SPATK"": 129, ""SPDEF"": 105, ""SPEED"": 100, ""P-Type"": ""Fire"", ""S-Type"": ""Flying""}}"
+722,Rowlet,68,55,55,50,50,42,Grass,Flying,Grass,None,Dartrix,17,{}
+723,Dartrix,78,75,75,70,70,52,Grass,Flying,Grass,None,Decidueye,34,{}
+724,Decidueye,78,107,75,100,100,70,Grass,Ghost,Ghost,Z-Move,None,0,{}
+025,Pikachu,35,55,40,50,50,90,Electric,None,Electric,Z-Move/G-Max,Raichu,30,"{""GMax"": {""HP"": 70, ""ATK"": 75, ""DEF"": 60, ""SPATK"": 70, ""SPDEF"": 70, ""SPEED"": 90, ""P-Type"": ""Electric"", ""S-Type"": ""None""}}"
+447,Riolu,40,70,40,35,40,60,Fighting,None,Fighting,None,Lucario,25,{}
+448,Lucario,70,110,70,115,70,90,Fighting,Steel,Steel,Mega/MegaZ,None,0,"{""Mega"": {""HP"": 70, ""ATK"": 145, ""DEF"": 88, ""SPATK"": 140, ""SPDEF"": 70, ""SPEED"": 112, ""P-Type"": ""Fighting"", ""S-Type"": ""Steel""}, ""MegaZ"": {""HP"": 70, ""ATK"": 150, ""DEF"": 50, ""SPATK"": 155, ""SPDEF"": 50, ""SPEED"": 110, ""P-Type"": ""Fighting"", ""S-Type"": ""Steel""}}"
+066,Machop,70,80,50,35,35,35,Fighting,None,Fighting,None,Machoke,28,{}
+067,Machoke,80,100,70,50,60,45,Fighting,None,Fighting,None,Machamp,38,{}
+068,Machamp,90,130,80,65,85,55,Fighting,None,Fighting,G-Max,None,0,"{""GMax"": {""HP"": 180, ""ATK"": 150, ""DEF"": 100, ""SPATK"": 65, ""SPDEF"": 105, ""SPEED"": 55, ""P-Type"": ""Fighting"", ""S-Type"": ""None""}}"
+133,Eevee,55,55,50,45,65,55,Normal,None,Normal,Z-Move/G-Max,Evolution_Variable,20,"{""GMax"": {""HP"": 110, ""ATK"": 75, ""DEF"": 70, ""SPATK"": 65, ""SPDEF"": 85, ""SPEED"": 55, ""P-Type"": ""Normal"", ""S-Type"": ""None""}}"
+134,Vaporeon,130,65,60,110,95,65,Water,None,Water,Tera,None,0,{}
+135,Jolteon,65,65,60,110,95,130,Electric,None,Electric,Tera,None,0,{}
+136,Flareon,65,130,60,95,110,65,Fire,None,Fire,Tera,None,0,{}
+196,Espeon,65,65,60,130,95,110,Psychic,None,Psychic,Tera,None,0,{}
+197,Umbreon,95,65,110,60,130,65,Dark,None,Dark,Tera,None,0,{}
+470,Leafeon,65,110,130,60,65,95,Grass,None,Grass,Tera,None,0,{}
+471,Glaceon,65,60,110,130,95,65,Ice,None,Ice,Tera,None,0,{}
+700,Sylveon,95,65,65,110,130,60,Fairy,None,Fairy,Tera,None,0,{}
+443,Gible,58,70,45,40,45,42,Dragon,Ground,Dragon,None,Gabite,24,{}
+444,Gabite,68,90,65,50,55,82,Dragon,Ground,Dragon,None,Garchomp,48,{}
+445,Garchomp,108,130,95,80,85,102,Dragon,Ground,Ground,Mega/Z/MegaZ,None,0,"{""Mega"": {""HP"": 108, ""ATK"": 170, ""DEF"": 115, ""SPATK"": 120, ""SPDEF"": 95, ""SPEED"": 92, ""P-Type"": ""Dragon"", ""S-Type"": ""Ground""}, ""MegaZ"": {""HP"": 108, ""ATK"": 170, ""DEF"": 75, ""SPATK"": 120, ""SPDEF"": 65, ""SPEED"": 102, ""P-Type"": ""Dragon"", ""S-Type"": ""Ground""}}"
+147,Dratini,41,64,45,50,50,50,Dragon,None,Dragon,None,Dragonair,30,{}
+148,Dragonair,61,84,65,70,70,70,Dragon,None,Dragon,None,Dragonite,55,{}
+149,Dragonite,91,134,95,100,100,80,Dragon,Flying,Normal,Mega,None,0,"{""Mega"": {""HP"": 91, ""ATK"": 164, ""DEF"": 115, ""SPATK"": 120, ""SPDEF"": 120, ""SPEED"": 100, ""P-Type"": ""Dragon"", ""S-Type"": ""Fairy""}}"
+016,Pidgey,40,45,40,35,35,56,Normal,Flying,Flying,None,Pidgeotto,18,{}
+017,Pidgeotto,63,60,55,50,50,71,Normal,Flying,Flying,None,Pidgeot,36,{}
+018,Pidgeot,83,80,75,70,70,101,Normal,Flying,Flying,Mega,None,0,"{""Mega"": {""HP"": 83, ""ATK"": 80, ""DEF"": 80, ""SPATK"": 135, ""SPDEF"": 80, ""SPEED"": 121, ""P-Type"": ""Normal"", ""S-Type"": ""Flying""}}"
+399,Bidoof,59,45,40,35,40,31,Normal,None,Normal,None,None,0,{}
+304,Aron,50,70,100,40,40,30,Steel,Rock,Steel,None,Lairon,32,{}
+305,Lairon,60,90,140,50,50,40,Steel,Rock,Steel,None,Aggron,42,{}
+306,Aggron,70,110,180,60,60,50,Steel,Rock,Steel,Mega,None,0,"{""Mega"": {""HP"": 70, ""ATK"": 140, ""DEF"": 230, ""SPATK"": 60, ""SPDEF"": 80, ""SPEED"": 50, ""P-Type"": ""Steel"", ""S-Type"": ""None""}}"
+384,Rayquaza,105,150,90,150,90,95,Dragon,Flying,Flying,Mega,None,0,"{""Mega"": {""HP"": 105, ""ATK"": 180, ""DEF"": 100, ""SPATK"": 180, ""SPDEF"": 100, ""SPEED"": 115, ""P-Type"": ""Dragon"", ""S-Type"": ""Flying""}}"
+892,Urshifu,100,130,100,63,60,97,Fighting,Dark,Dark,G-Max,None,0,"{""GMax"": {""HP"": 200, ""ATK"": 150, ""DEF"": 110, ""SPATK"": 63, ""SPDEF"": 60, ""SPEED"": 97, ""P-Type"": ""Fighting"", ""S-Type"": ""Dark""}}"
+1008,Miraidon,100,85,100,135,115,135,Electric,Dragon,Electric,Tera,None,0,{}
