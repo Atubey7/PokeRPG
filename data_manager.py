@@ -35,7 +35,7 @@ def load_pokemon(filename):
             P_TYPE=row["P-Type"],
             S_TYPE=s_type,
             Tera_Type=row["Tera"],
-            Current_Type=initial_types,  # Now correctly loads both types!
+            Current_Type=initial_types,
             Forms=forms_data,
         )
 
