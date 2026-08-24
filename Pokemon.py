@@ -12,7 +12,7 @@ class Pokemon:
         self.Health = Stats["HP"]
         self.Tera_Type = Tera_Type
         self.Current_Type = Current_Type
-        self.Level = Level
+        self.Level = 50
         self.Forms = Forms
         self.current_form = "Original"
         self.moves = []
