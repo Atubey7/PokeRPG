@@ -33,9 +33,8 @@ def load_pokemon(filename):
             name=row["Name"],
             Stats=stats_dict,
             P_TYPE=row["P-Type"],
-            S_TYPE=s_type,
+            S_TYPE=row["S-Type"],
             Tera_Type=row["Tera"],
-            Current_Type=initial_types,
             Forms=forms_data,
         )
 

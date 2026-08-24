@@ -16,4 +16,10 @@ class Trainer:
         if self.pokemon_team[index].health != 0:
             self.active_pokemon = index
         else:
-            next_healthy()
+            self.next_healthy()
+    def get_gimmick(self):
+        return self.pokemon_team[self.active_pokemon].current_form
+    def set_gimmick(self, gimmick):
+        self.gimmick_used = True
+        self.pokemon_team[self.active_pokemon].current_form = gimmick
+        self.pokemon_team[self.active_pokemon].activate_gimmick(gimmick)

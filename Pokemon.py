@@ -1,5 +1,5 @@
 class Pokemon:
-    def __init__(self, dex, name, Stats, P_TYPE, S_TYPE,Tera_Type, Current_Type,Level,Forms):
+    def __init__(self, dex, name, Stats, P_TYPE, S_TYPE,Tera_Type,Forms):
         self.dex = dex
         self.name = name
         self.HP = Stats["HP"]
@@ -11,7 +11,6 @@ class Pokemon:
         self.TYPE = [P_TYPE, S_TYPE]
         self.Health = Stats["HP"]
         self.Tera_Type = Tera_Type
-        self.Current_Type = Current_Type
         self.Level = 50
         self.Forms = Forms
         self.current_form = "Original"
