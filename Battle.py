@@ -12,7 +12,7 @@ def check_faint(trainer):
 def gimmick_choice(trainer):
     pass
 def move_choice(trainer):
-    pass
+    return trainer.get_active().moves[0]
 
 def calculate_damage(attacker, defender, move, attacker_gimmick):
     # Pick correct attack and defense stats
@@ -24,7 +24,7 @@ def calculate_damage(attacker, defender, move, attacker_gimmick):
         defense = defender.SPDEF
 
     # Base damage formula
-    base = ((2 * attacker.level / 5) + 2) * move.power * (attack / defense) / 50 + 2
+    base = ((2 * attacker.Level / 5) + 2) * move.power * (attack / defense) / 50 + 2
 
     # STAB - same type attack bonus
     if move.type in attacker.TYPE:
@@ -46,21 +46,21 @@ def run_battle(player, opponent):
         opponent_gimmick = gimmick_choice(opponent)
         opponent_move = move_choice(opponent)
         equal = False
-        if player.get_active().SPEED == opponent.get_active().SPEED and player_move.PRIORITY == opponent_move.PRIORITY:
+        if player.get_active().SPEED == opponent.get_active().SPEED and player_move.priority == opponent_move.priority:
             equal = True
             num = random.randint(1,2)
-        if (player.get_active().SPEED > opponent.get_active().SPEED and player_move.PRIORITY >= opponent_move.PRIORITY) or (equal and num == 1) or player.getactive().PRIORITY > opponent.get_active().PRIORITY:
-            player_damage = calculate_damage(player, opponent, player_move, player_gimmick)
-            opponent.get_active().health -= player_damage
+        if (player.get_active().SPEED > opponent.get_active().SPEED and player_move.priority >= opponent_move.priority) or (equal and num == 1) or player.getactive().priority > opponent.get_active().priority:
+            player_damage = calculate_damage(player.get_active(), opponent.get_active(), player_move, player_gimmick)
+            opponent.get_active().Health -= player_damage
             if check_faint(opponent) != "battle_over":
-                opponent_damage = calculate_damage(opponent, player, opponent_move, opponent_gimmick)
-        elif player.get_active().SPEED < opponent.get_active().SPEED and player_move.PRIORITY >= opponent_move.PRIORITY) or (equal and num == 2):
-            opponent_damage = calculate_damage(opponent, player, opponent_move, opponent_gimmick)
-            player.get_active().health -= opponent_damage
-            if check_faint(opponent) == "battle_over":
-                player_damage = calculate_damage(player, opponent, player_move, player_gimmick)
-                opponent.get_active().health -= player_damage
+                opponent_damage = calculate_damage(opponent.get_active(), player.get_active(), opponent_move, opponent_gimmick)
+        elif (player.get_active().SPEED < opponent.get_active().SPEED and player_move.priority >= opponent_move.priority) or (equal and num == 2):
+            opponent_damage = calculate_damage(opponent.get_active(), player.get_active(), opponent_move, opponent_gimmick)
+            player.get_active().Health -= opponent_damage
+            if check_faint(player) != "battle_over":
+                player_damage = calculate_damage(player.get_active(), opponent.get_active(), player_move, player_gimmick)
+                opponent.get_active().Health -= player_damage
         if check_faint(opponent) == "battle_over":
             print(f"{player.name} wins!")
-        break
+            break
 
