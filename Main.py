@@ -1,5 +1,9 @@
+from Battle import run_battle
 from data_manager import load_pokemon
-pokemon_list = load_pokemon("/Users/ayaanbeig/PycharmProjects/PokeRPG/Pokemon Stats Dex.csv")
+from Trainer import Trainer
+from Pokemon import Pokemon
+from Pokemon import Move
+pokemon_list = load_pokemon("Pokemon Stats Dex.csv")
 print(pokemon_list[0].name)
 
 import pygame
@@ -14,6 +18,21 @@ pygame.display.set_caption('PokeRPG')
 clock = pygame.time.Clock()
 
 running = False
+
+
+greninja = pokemon_list[2]
+test_move = Move("Water Shuriken", "Water", "Physical", 15, 100, 20, 1)
+greninja.moves.append(test_move)
+
+# Give Charizard a test move
+charizard = pokemon_list[6]
+fire_move = Move("Flamethrower", "Fire", "Special", 90, 100, 15, 0)
+charizard.moves.append(fire_move)
+
+player = Trainer("Ayaan", [greninja], 0, False)
+opponent = Trainer("Rival", [charizard], 0, False)
+
+run_battle(player, opponent)
 
 while running:
     #Event Handling
