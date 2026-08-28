@@ -44,7 +44,7 @@ def load_pokemon(filename):
         pokemon_list.append(pokemon_obj)
     return pokemon_list
 def pokemon_type_effectiveness(attacker_move, defender):
-    filename = "Pokémon Type Chart.csv"
+    filename = "Pokemon Type Chart.csv"
     df = pd.read_csv(filename)
     list = []
     df.set_index(df.columns[0], inplace=True)
