@@ -4,7 +4,6 @@ from Trainer import Trainer
 from Pokemon import Pokemon
 from Pokemon import Move
 pokemon_list = load_pokemon("Pokemon Stats Dex.csv")
-print(pokemon_list[0].name)
 
 import pygame
 import sys
@@ -21,11 +20,11 @@ running = False
 
 
 greninja = pokemon_list[2]
-test_move = Move("Water Shuriken", "Water", "Physical", 15, 100, 20, 1)
+test_move = Move("Water Shuriken", "Water", "Physical", 25, 100, 20, 1)
 greninja.moves.append(test_move)
 
 # Give Charizard a test move
-charizard = pokemon_list[6]
+charizard = pokemon_list[5]
 fire_move = Move("Flamethrower", "Fire", "Special", 90, 100, 15, 0)
 charizard.moves.append(fire_move)
 
