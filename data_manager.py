@@ -2,7 +2,8 @@ import pandas as pd
 import json
 from Pokemon import Pokemon
 
-filename = "Pokemon_Stats_Dex.csv"
+file1 = "Pokemon_Stats_Dex.csv"
+file2 = "Pokémon Type Chart.csv"
 def load_pokemon(filename):
     df = pd.read_csv(filename)
     pokemon_list = []
@@ -41,3 +42,8 @@ def load_pokemon(filename):
 
         pokemon_list.append(pokemon_obj)
     return pokemon_list
+def pokemon_type_effectiveness(filename):
+    df = pd.read_csv(filename)
+    for _, row in df.iterrows():
+        print(row)
+pokemon_type_effectiveness(file2)

@@ -1,5 +1,7 @@
 import random
 from Trainer import Trainer
+from data_manager import pokemon_type_effectiveness
+def Type_Matchup(attacker, defender):
 
 def check_faint(trainer):
     if trainer.get_active().Health <= 0:
@@ -34,6 +36,9 @@ def calculate_damage(attacker, defender, move, attacker_gimmick):
     #Tera STAB TBC
     if stab == 1.5:
         pass
+
+    #Type Effectiveness
+
 
     variance = random.uniform(0.85, 1.0)
 
