@@ -50,15 +50,15 @@ class Pokemon:
             self.SPEED = form_data["SPEED"]
             self.TYPE = [form_data["P-Type"],form_data["S-Type"]]
 class Move:
-    def __init__(self,name, type, category, power, accuracy, pp):
+    def __init__(self,name, type, category, power, accuracy, pp, priority):
         self.name = name
         self.type = type
-
         self.category = category
         self.power = power
         self.accuracy = accuracy
         self.max_pp = pp
         self.current_pp = pp
+        self.priority = priority
     def use_move(self):
         if self.current_pp > 0:
             self.current_pp -= 1
