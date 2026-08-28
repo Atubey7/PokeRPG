@@ -2,7 +2,7 @@ import pandas as pd
 import json
 from Pokemon import Pokemon
 
-filename = "/Users/ayaanbeig/PycharmProjects/PokeRPG/Pokemon Stats Dex.csv"
+filename = "Pokemon_Stats_Dex.csv"
 def load_pokemon(filename):
     df = pd.read_csv(filename)
     pokemon_list = []
@@ -26,15 +26,16 @@ def load_pokemon(filename):
             except json.JSONDecodeError:
                 forms_data = {}
 
-        initial_types = [row["P-Type"], row["S-Type"]]
+        s_type = None if row["S-Type"] == "None" else row["S-Type"]
+        initial_types = [row["P-Type"], s_type]
 
         pokemon_obj = Pokemon(
             dex=int(row["DexID"]),
-            name=row["Name"],
+            name=str(row["Name"]),
             Stats=stats_dict,
-            P_TYPE=row["P-Type"],
-            S_TYPE=row["S-Type"],
-            Tera_Type=row["Tera"],
+            P_TYPE=str(row["P-Type"]),
+            S_TYPE=str(row["S-Type"]),
+            Tera_Type=str(row["Tera"]),
             Forms=forms_data,
         )
 
