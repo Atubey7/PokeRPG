@@ -1,7 +1,6 @@
 import random
 from Trainer import Trainer
 from data_manager import pokemon_type_effectiveness
-def Type_Matchup(attacker, defender):
 
 def check_faint(trainer):
     if trainer.get_active().Health <= 0:
@@ -15,7 +14,18 @@ def gimmick_choice(trainer):
     pass
 def move_choice(trainer):
     return trainer.get_active().moves[0]
-
+def battle_text(attacker, attacker_move, defender):
+    effectiveness = pokemon_type_effectiveness(attacker_move, defender.get_active())
+    text = ""
+    if effectiveness == 2.0:
+        text = "\nIt was Super Effective"
+    elif effectiveness == 4.0:
+        text = "\nIt was Extremely Effective"
+    elif effectiveness == 0.0:
+        text = "\nIt had No Effect"
+    elif effectiveness == 0.5:
+        text = "\nIt was Not Very Effective"
+    print(f"{attacker.get_active().name} used {attacker_move.name}{text}")
 def calculate_damage(attacker, defender, move, attacker_gimmick):
     # Pick correct attack and defense stats
     if move.category == "Physical":
@@ -38,11 +48,11 @@ def calculate_damage(attacker, defender, move, attacker_gimmick):
         pass
 
     #Type Effectiveness
-
+    type = pokemon_type_effectiveness(move, defender)
 
     variance = random.uniform(0.85, 1.0)
 
-    damage = round(base * stab * variance)
+    damage = round(base * stab * variance * type)
     return damage
 def run_battle(player, opponent):
     while True:
@@ -57,15 +67,23 @@ def run_battle(player, opponent):
         if (player.get_active().SPEED > opponent.get_active().SPEED and player_move.priority >= opponent_move.priority) or (equal and num == 1) or player.getactive().priority > opponent.get_active().priority:
             player_damage = calculate_damage(player.get_active(), opponent.get_active(), player_move, player_gimmick)
             opponent.get_active().Health -= player_damage
+            battle_text(player, player_move, opponent)
+            print(f"It dealt: {player_damage}")
             if check_faint(opponent) != "battle_over":
                 opponent_damage = calculate_damage(opponent.get_active(), player.get_active(), opponent_move, opponent_gimmick)
+                battle_text(opponent, opponent_move, player)
+                print(f"It dealt: {opponent_damage}")
         elif (player.get_active().SPEED < opponent.get_active().SPEED and player_move.priority >= opponent_move.priority) or (equal and num == 2):
             opponent_damage = calculate_damage(opponent.get_active(), player.get_active(), opponent_move, opponent_gimmick)
             player.get_active().Health -= opponent_damage
+            battle_text(opponent, opponent_move, player)
+            print(f"It dealt: {opponent_damage}")
             if check_faint(player) != "battle_over":
                 player_damage = calculate_damage(player.get_active(), opponent.get_active(), player_move, player_gimmick)
                 opponent.get_active().Health -= player_damage
+                battle_text(player, player_move, opponent)
+                print(f"It dealt: {player_damage}")
         if check_faint(opponent) == "battle_over":
-            print(f"{player.name} wins!")
+            print(f"{opponent.get_active().name} fainted\n{player.name} wins!")
             break
 
