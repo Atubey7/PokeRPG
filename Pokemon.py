@@ -9,9 +9,9 @@ class Pokemon:
         self.SPDEF = Stats["SPDEF"]
         self.SPEED = Stats["SPEED"]
         self.TYPE = [P_TYPE, S_TYPE]
-        self.Health = Stats["HP"]
-        self.Tera_Type = Tera_Type
         self.Level = 50
+        self.Health = self.calc_health(Stats["HP"])
+        self.Tera_Type = Tera_Type
         self.Forms = Forms
         self.current_form = "Original"
         self.moves = []
@@ -49,8 +49,9 @@ class Pokemon:
             self.SPDEF = form_data["SPDEF"]
             self.SPEED = form_data["SPEED"]
             self.TYPE = [form_data["P-Type"],form_data["S-Type"]]
-    def calc_health(self, HP , level):
-        pass
+    def calc_health(self, base_hp):
+        import math
+        return math.floor(0.01 * (2 * base_hp) * self.Level) + self.Level + 10
 class Move:
     def __init__(self,name, type, category, power, accuracy, pp, priority, crit):
         self.name = name
