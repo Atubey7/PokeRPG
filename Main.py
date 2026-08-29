@@ -1,9 +1,10 @@
 from Battle import run_battle
 from data_manager import load_pokemon
 from Trainer import Trainer
-from Pokemon import Pokemon
+from data_manager import load_moves
 from Pokemon import Move
 pokemon_list = load_pokemon("Pokemon Stats Dex.csv")
+move_list = load_moves("Moves.csv")
 
 import pygame
 import sys
