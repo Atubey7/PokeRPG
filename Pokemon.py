@@ -49,8 +49,10 @@ class Pokemon:
             self.SPDEF = form_data["SPDEF"]
             self.SPEED = form_data["SPEED"]
             self.TYPE = [form_data["P-Type"],form_data["S-Type"]]
+    def calc_health(self, HP , level):
+        pass
 class Move:
-    def __init__(self,name, type, category, power, accuracy, pp, priority):
+    def __init__(self,name, type, category, power, accuracy, pp, priority, crit):
         self.name = name
         self.type = type
         self.category = category
@@ -59,6 +61,7 @@ class Move:
         self.max_pp = pp
         self.current_pp = pp
         self.priority = priority
+        self.crit = crit
     def use_move(self):
         if self.current_pp > 0:
             self.current_pp -= 1

@@ -20,16 +20,16 @@ running = False
 
 
 greninja = pokemon_list[2]
-test_move = Move("Water Shuriken", "Water", "Physical", 25, 100, 20, 1)
+test_move = Move("Water Shuriken", "Water", "Physical", 15, 100, 20, 1, 0)
 greninja.moves.append(test_move)
 
 # Give Charizard a test move
 charizard = pokemon_list[5]
-fire_move = Move("Flamethrower", "Fire", "Special", 90, 100, 15, 0)
+fire_move = Move("Flamethrower", "Fire", "Special", 90, 100, 15, 0, 0)
 charizard.moves.append(fire_move)
 
 player = Trainer("Ayaan", [greninja], 0, False)
-opponent = Trainer("Rival", [charizard], 0, False)
+opponent = Trainer("AI", [charizard], 0, False)
 
 run_battle(player, opponent)
 
