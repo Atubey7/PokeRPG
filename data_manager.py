@@ -5,6 +5,7 @@ from Pokemon import Move
 
 file1 = "Pokemon Stats Dex.csv"
 file2 = "Pokémon Type Chart.csv"
+file3 = "Moves.csv"
 def load_pokemon(filename):
     df = pd.read_csv(filename)
     pokemon_list = []
@@ -43,6 +44,23 @@ def load_pokemon(filename):
 
         pokemon_list.append(pokemon_obj)
     return pokemon_list
+def load_moves(filename):
+    df = pd.read_csv(filename)
+    move_list = []
+    for _, row in df.iterrows():
+        move = Move(
+            name=row["Name"],
+            type=row["Type"],
+            category=row["Category"],
+            power=int(row["Power"]),
+            accuracy=int(row["Accuracy"]),
+            pp=int(row["PP"]),
+            priority=int(row["Priority"]),
+            crit=int(row["Crit"])
+        )
+        move.move_type = row["MoveType"]
+        move_list.append(move)
+    return move_list
 def pokemon_type_effectiveness(attacker_move, defender):
     filename = "Pokemon Type Chart.csv"
     df = pd.read_csv(filename)
