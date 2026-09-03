@@ -1,41 +1,41 @@
-DexID,MoveID1,MoveID2,MoveID3,MoveID4,ZMove,GMaxMove
-656,1,60,3,44,Hydro Vortex,None
-657,1,60,3,106,Hydro Vortex,None
-658,125,106,3,119,Hydro Vortex,None
-004,5,38,41,44,Inferno Overdrive,None
-005,5,66,38,43,Inferno Overdrive,None
-006,76,66,7,74,Inferno Overdrive,G-Max Wildfire
-722,8,33,34,10,Bloom Doom,None
-723,8,33,94,10,Bloom Doom,None
-724,8,97,33,46,Sinister Arrow Raid,None
-025,76,41,11,102,Gigavolt Havoc,G-Max Volt Crash
-447,13,16,82,21,All-Out Pummeling,None
-448,13,82,21,85,All-Out Pummeling,None
-066,18,13,16,38,All-Out Pummeling,None
-067,18,13,16,38,All-Out Pummeling,None
-068,13,18,16,82,All-Out Pummeling,G-Max Chi Strike
-133,38,102,59,117,Breakneck Blitz,G-Max Cuddle
-134,61,60,38,102,Hydro Vortex,None
-135,76,79,12,102,Gigavolt Havoc,None
-136,66,5,38,68,Inferno Overdrive,None
-196,110,111,56,57,Shattered Psyche,None
-197,43,106,45,46,Black Hole Eclipse,None
-470,8,10,71,72,Bloom Doom,None
-471,119,47,120,49,Subzero Slammer,None
-700,115,116,58,117,Twinkle Tackle,None
-443,24,28,90,26,Devastating Drake,None
-444,24,28,92,26,Devastating Drake,None
-445,89,28,24,92,Devastating Drake,None
-147,24,90,38,40,Devastating Drake,None
-148,88,24,90,38,Devastating Drake,None
-149,89,32,24,88,Devastating Drake,None
-016,34,33,38,41,Supersonic Skystrike,None
-017,34,33,94,38,Supersonic Skystrike,None
-018,95,94,32,38,Supersonic Skystrike,None
-399,38,40,39,100,Breakneck Blitz,None
-304,21,52,53,22,Corkscrew Crash,None
-305,21,52,28,22,Corkscrew Crash,None
-306,21,51,28,87,Corkscrew Crash,None
-384,89,32,25,95,Devastating Drake,None
-892,13,43,45,18,Malicious Moonsault,G-Max One Blow
-1008,76,89,85,110,Gigavolt Havoc,None
+DexID,MoveID1,MoveID2,MoveID3,MoveID4
+656,1,60,3,44
+657,1,60,3,106
+658,125,106,3,119
+004,5,38,41,44
+005,5,66,38,43
+006,76,66,7,74
+722,8,33,34,10
+723,8,33,94,10
+724,127,97,33,46
+025,12,41,11,102
+447,13,16,82,21
+448,13,82,21,85
+066,18,13,16,38
+067,18,13,16,38
+068,13,18,16,82
+133,38,102,59,117
+134,61,60,38,102
+135,76,79,12,102
+136,66,5,38,68
+196,110,111,56,57
+197,43,106,45,46
+470,8,10,71,72
+471,119,47,120,49
+700,115,116,58,117
+443,24,28,90,26
+444,24,28,92,26
+445,89,28,24,92
+147,24,90,38,40
+148,88,24,90,38
+149,89,32,24,88
+016,34,33,38,41
+017,34,33,94,38
+018,95,94,32,38
+399,38,40,39,100
+304,21,52,53,22
+305,21,52,28,22
+306,21,51,28,87
+384,89,32,25,95
+892,13,43,45,18
+1008,76,89,85,110
