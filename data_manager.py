@@ -61,6 +61,36 @@ def load_moves(filename):
         move.move_type = row["MoveType"]
         move_list.append(move)
     return move_list
+
+def load_pokemon_moves(pokemon_list, move_list, filename):
+    # Build lookup dicts for speed
+    move_by_id = {m.id: m for m in move_list}  # need to add ID to Move
+    move_by_name = {m.name: m for m in move_list}
+    pokemon_by_dex = {p.dex: p for p in pokemon_list}
+
+    df = pd.read_csv(filename)
+    for _, row in df.iterrows():
+        dex = int(row["DexID"])
+        pokemon = pokemon_by_dex.get(dex)
+        if not pokemon:
+            continue
+        # Assign 4 normal moves
+        for col in ["MoveID1", "MoveID2", "MoveID3", "MoveID4"]:
+            move_id = int(row[col])
+            move = move_by_id.get(move_id)
+            if move:
+                pokemon.moves.append(move)
+        # Assign Z-move
+        if row["ZMove"] != "None":
+            zmove = move_by_name.get(row["ZMove"])
+            if zmove:
+                pokemon.z_move = zmove
+        # Assign GMax move
+        if row["GMaxMove"] != "None":
+            gmove = move_by_name.get(row["GMaxMove"])
+            if gmove:
+                pokemon.gmax_move = gmove
+
 def pokemon_type_effectiveness(attacker_move, defender):
     filename = "Pokemon Type Chart.csv"
     df = pd.read_csv(filename)
