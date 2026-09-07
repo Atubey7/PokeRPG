@@ -21,7 +21,7 @@ running = False
 
 
 greninja = pokemon_list[2]
-test_move = Move("Water Shuriken", "Water", "Physical", 15, 100, 20, 1, 0)
+test_move = Move("Water Shuriken", "Water", "Physical", 50, 100, 20, 1, 0)
 greninja.moves.append(test_move)
 
 # Give Charizard a test move
