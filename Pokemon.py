@@ -63,6 +63,9 @@ class Move:
         self.current_pp = pp
         self.priority = priority
         self.crit = crit
+        self.id = None
+        self.z_move = None
+        self.gmax_move = None
     def use_move(self):
         if self.current_pp > 0:
             self.current_pp -= 1
