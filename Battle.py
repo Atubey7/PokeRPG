@@ -89,7 +89,7 @@ def run_battle(player, opponent):
         if player.get_active().SPEED == opponent.get_active().SPEED and player_move.priority == opponent_move.priority:
             equal = True
             num = random.randint(1,2)
-        if (player.get_active().SPEED > opponent.get_active().SPEED and player_move.priority >= opponent_move.priority) or (equal and num == 1) or player.get_active().priority > opponent.get_active().priority:
+        if (player.get_active().SPEED > opponent.get_active().SPEED and player_move.priority >= opponent_move.priority) or (equal and num == 1) or player_move.priority > opponent_move.priority:
             player_damage = calculate_damage(player.get_active(), opponent.get_active(), player_move, player_gimmick)
             opponent.get_active().Health -= player_damage
             battle_text(player, player_move, opponent)
