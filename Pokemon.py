@@ -2,21 +2,22 @@ class Pokemon:
     def __init__(self, dex, name, Stats, P_TYPE, S_TYPE,Tera_Type,Forms):
         self.dex = dex
         self.name = name
-        self.HP = Stats["HP"]
+        self.Level = 50
+        self.HP = self.calc_health(Stats["HP"])
         self.ATK = Stats["ATK"]
         self.DEF =  Stats["DEF"]
         self.SPATK = Stats["SPATK"]
         self.SPDEF = Stats["SPDEF"]
         self.SPEED = Stats["SPEED"]
         self.TYPE = [P_TYPE, S_TYPE]
-        self.Level = 50
-        self.Health = self.calc_health(Stats["HP"])
+        self.Health = self.HP
         self.Tera_Type = Tera_Type
         self.Forms = Forms
         self.current_form = "Original"
         self.moves = []
-        self.move_max = False
-        self.move_gmax = False
+        self.held_item = None
+        self.z_move = None
+        self.gmax_move = None
     def activate_gimmick(self, form):
         self.move_max = True
         if form == "Gmax":
@@ -53,7 +54,7 @@ class Pokemon:
         import math
         return math.floor(0.01 * (2 * base_hp) * self.Level) + self.Level + 10
 class Move:
-    def __init__(self,name, type, category, power, accuracy, pp, priority, crit):
+    def __init__(self,name, type, category, power, accuracy, pp, priority, crit, id):
         self.name = name
         self.type = type
         self.category = category
@@ -63,7 +64,7 @@ class Move:
         self.current_pp = pp
         self.priority = priority
         self.crit = crit
-        self.id = None
+        self.id = id
         self.z_move = None
         self.gmax_move = None
     def use_move(self):
