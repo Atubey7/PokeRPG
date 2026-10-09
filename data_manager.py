@@ -37,7 +37,7 @@ def load_pokemon(filename):
             name=str(row["Name"]),
             Stats=stats_dict,
             P_TYPE=str(row["P-Type"]),
-            S_TYPE=str(row["S-Type"]),
+            S_TYPE=str(s_type),
             Tera_Type=str(row["Tera"]),
             Forms=forms_data,
         )
@@ -48,6 +48,10 @@ def load_moves(filename):
     df = pd.read_csv(filename)
     move_list = []
     for _, row in df.iterrows():
+        if pd.notna(row["ID"]):
+            id = int(row["ID"])
+        else:
+            id = None
         move = Move(
             name=row["Name"],
             type=row["Type"],
@@ -56,7 +60,8 @@ def load_moves(filename):
             accuracy=int(row["Accuracy"]),
             pp=int(row["PP"]),
             priority=int(row["Priority"]),
-            crit=int(row["Crit"])
+            crit=int(row["Crit"]),
+            id = id
         )
         move.move_type = row["MoveType"]
         move_list.append(move)
@@ -80,25 +85,13 @@ def load_pokemon_moves(pokemon_list, move_list, filename):
             move = move_by_id.get(move_id)
             if move:
                 pokemon.moves.append(move)
-        # Assign Z-move
-        if row["ZMove"] != "None":
-            zmove = move_by_name.get(row["ZMove"])
-            if zmove:
-                pokemon.z_move = zmove
-        # Assign GMax move
-        if row["GMaxMove"] != "None":
-            gmove = move_by_name.get(row["GMaxMove"])
-            if gmove:
-                pokemon.gmax_move = gmove
+
+TYPE_CHART = pd.read_csv("Pokemon Type Chart.csv", index_col=0)
 
 def pokemon_type_effectiveness(attacker_move, defender):
-    filename = "Pokemon Type Chart.csv"
-    df = pd.read_csv(filename)
-    list = []
-    df.set_index(df.columns[0], inplace=True)
-    for type in defender.TYPE:
-        list.append(df.loc[attacker_move.type,type])
-    if len(list) == 1:
-        return list[0]
-    else:
-        return list[0] * list[1]
+    result = 1.0
+    for t in defender.TYPE:
+        if t is None:
+            continue
+        result *= TYPE_CHART.loc[attacker_move.type, t]
+    return result
